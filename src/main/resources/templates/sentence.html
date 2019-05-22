@@ -10,9 +10,9 @@
 	<div class="starter-template">
 		<h1>Dynamically Generated Sentence</h1>
 		<p class="lead">A sentence goes here:
-			<span id="subject"/>
-			<span id="predicate"/>
-			<span id="object"/>
+			<span id="subject"></span>
+			<span id="predicate"></span>
+			<span id="object"></span>
 		</p>
 	</div>
 	<div id="error" class="text-danger">
@@ -30,9 +30,9 @@
     var prefix = "";
 
     // Perform AJAX requests...
-    $.getJSON(prefix + "/subject",   null, displaySubject)  .fail(displayErrorSubject);
-    $.getJSON(prefix + "/predicate", null, displayPredicate).fail(displayErrorPredicate);
-    $.getJSON(prefix + "/object",    null, displayObject)   .fail(displayErrorObject);
+    $.getJSON(prefix + "/random-subject-generator",   null, displaySubject)  .fail(displayErrorSubject);
+    $.getJSON(prefix + "/random-predicate-generator", null, displayPredicate).fail(displayErrorPredicate);
+    $.getJSON(prefix + "/random-object-generator",    null, displayObject)   .fail(displayErrorObject);
 
     //	Handle Success:
 
@@ -62,7 +62,7 @@
         err(x, s, m, "object");
     }
 
-    // Dsiplay text of AJAX error message using a hidden div
+    // Display text of AJAX error message using a hidden div
     function err(xhr, status, msg, prefix) {
         // Display an error in the 'error' div above and show it.
         var text = xhr.responseText;
